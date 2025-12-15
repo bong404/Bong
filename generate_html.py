@@ -26,18 +26,26 @@ html = """
 <head>
 <meta charset="UTF-8">
 <title>Actualités Émulation</title>
-<style>
-body { font-family: Arial, sans-serif; background:#111; color:#eee; max-width:1000px; margin:auto; }
-h1 { text-align:center; }
-.article { background:#1e1e1e; padding:15px; margin:15px 0; border-radius:8px; }
-a { color:#4da6ff; text-decoration:none; }
-.date { font-size:0.9em; color:#aaa; }
-.source { font-size:0.9em; color:#888; }
-</style>
+<link rel="stylesheet" href="https://unpkg.com/@sakun/system.css"
+ 
+    <style>
+    body { font-family: Arial, sans-serif; background:#111; color:#eee; max-width:1000px; margin:auto; }
+    h1 { text-align:center; }
+    .article { background:#1e1e1e; padding:15px; margin:15px 0; border-radius:8px; }
+    a { color:#4da6ff; text-decoration:none; }
+    .date { font-size:0.9em; color:#aaa; }
+    .source { font-size:0.9em; color:#888; }
+    </style>
+    
 </head>
 <body>
 <h1>🕹️ Actualités de l’Émulation</h1>
 """
+
+ <section class="hero">
+        <h2>Mon activité</h2>
+        <p>Je présente ici mon travail.</p>
+</section>
 
 for title, summary, url, source, date in rows:
     html += f"""
