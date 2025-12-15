@@ -1,0 +1,35 @@
+name: Collect Emulation News
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # Tous les jours à 6h
+  workflow_dispatch:      # Permet de lancer manuellement
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloner le repo
+        uses: actions/checkout@v3
+
+      - name: Installer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Installer dépendances
+        run: |
+          pip install feedparser requests beautifulsoup4
+
+      - name: Exécuter le script
+        run: |
+          python collect_emulation_news.py
+
+      - name: Commit des données mises à jour
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add .
+          git commit -m "Mise à jour quotidienne" || echo "Aucun changement"
+          git push
