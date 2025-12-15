@@ -1,2 +1,2 @@
 # Bong
-Le site de Jayce conquérant de la lumière
+Le site de Jayce, conquérant de la lumière
